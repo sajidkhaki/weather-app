@@ -24,7 +24,7 @@ body {
 
 .title-container {
   height: 90vh;
-  background: url("../src/components/img/bg.jpg") center center no-repeat;
+  background: url("../src/components/img/bg2.jpg") center center no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -75,7 +75,6 @@ input[type="text"] {
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px #2c3e50 inset;
-    box-shadow: 0 0 0 30px #2c3e50 inset;
     -webkit-text-fill-color: #fff !important;
 }
 
