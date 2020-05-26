@@ -24,7 +24,7 @@ body {
 
 .title-container {
   height: 90vh;
-  background: url("../src/components/img/bg.jpg") center center no-repeat;
+  background: url("../src/components/img/bg2.jpg") center center no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
