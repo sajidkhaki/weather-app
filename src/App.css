@@ -29,6 +29,7 @@ body {
   background: #fff;
   box-shadow: 0px 13px 40px -13px rgba(0,0,0,0.75);
   width: 75%;
+  background-color: #2c3e50;
 }
 
 .title-container {
@@ -116,6 +117,7 @@ button:active {
   font-size: 20px;
   font-weight: 200;
   letter-spacing: 2px;
+  margin-left: 5%;
 }
 
 .weather__key {
@@ -143,13 +145,27 @@ button:active {
 
 
 /* MEDIA QUERIES */
+@media screen and (min-width: 320px) and (max-width: 960px) and (orientation: landscape) {
+  .container {
+    width: auto;
+  }
+  .main {
+    overflow: auto;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 960px) {
+  .container {
+    width: auto;
+  }
+  .main {
+    overflow: auto;
+  }
+}
 
 @media only screen and (min-width: 320px) {
   html {
     font-size: 9px;
-  }
-  .container {
-    width: 250px;
   }
   .title-container {
     height: 25vh;
@@ -189,9 +205,6 @@ button:active {
   html {
     font-size: 9px;
   }
-  .container {
-    width: 270px;
-  }
   .title-container {
     height: 25vh;
   }
@@ -230,10 +243,7 @@ button:active {
   html {
     font-size: 9px;
   }
-  .container {
-    width: 285px;
-  }
-  .title-container {
+ .title-container {
     height: 30vh;
   }
   .title-container__title {
@@ -270,9 +280,6 @@ button:active {
 @media only screen and (min-width: 411px) {
   html {
     font-size: 9px;
-  }
-  .container {
-    width: 310px;
   }
   .title-container {
     height: 30vh;
@@ -312,9 +319,6 @@ button:active {
   html {
     font-size: 9px;
   }
-  .container {
-    width: 310px;
-  }
   .title-container {
     height: 30vh;
   }
@@ -353,9 +357,6 @@ button:active {
   html {
     font-size: 10px;
   }
-  .container {
-    width: 600px;
-  }
   .title-container {
     height: 30vh;
   }
@@ -392,9 +393,6 @@ button:active {
 @media only screen and (min-width: 1024px) {
   html {
     font-size: 10px;
-  }
-  .container {
-    width: 1100px;
   }
   .title-container {
     height: 90vh;
