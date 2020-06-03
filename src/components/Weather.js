@@ -12,19 +12,19 @@ const Weather = props => {
             }
             {
                 props.temperature && <p className="weather__key">
-                    <FontAwesomeIcon icon={faSun} />Temperature:
+                    <FontAwesomeIcon icon={faSun} /> Temperature:
                     <span className="weather__value"> {props.temperature}	</span>
                 </p>
             }
             {
                 props.humidity && <p className="weather__key">
-                    <FontAwesomeIcon icon={faMapMarker} />Humidity:
+                    <FontAwesomeIcon icon={faMapMarker} /> Humidity:
                     <span className="weather__value"> {props.humidity} </span>
                 </p>
-            }
+            } 
             {
                 props.description && <p className="weather__key">
-                    <FontAwesomeIcon icon={faPenAlt} />Description:
+                    <FontAwesomeIcon icon={faPenAlt} /> Description:
                     <span className="weather__value"> {props.description} </span>
                 </p>
             }
