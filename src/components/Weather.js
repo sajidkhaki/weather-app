@@ -23,7 +23,7 @@ const Weather = props => {
                 </p>
             } 
             {
-                props.description && <p className="weather__key">
+                props.description && <p className="weather__key last">
                     <FontAwesomeIcon icon={faPenAlt} /> Description:
                     <span className="weather__value"> {props.description} </span>
                 </p>

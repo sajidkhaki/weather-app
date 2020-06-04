@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Title from './components/Title'
+import SubTitle from './components/SubTitle'
 import Form from './components/Form'
 import Weather from './components/Weather'
 
@@ -70,34 +71,54 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <div className="wrapper">
-          <div className="main">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-5 col-md-5 title-container">
-                  <Title />
-                </div>
-                <div className="col-lg-6 col-md-6 form-container">
-                  <Form getWeather={this.getWeather} />
-                  <Weather
-                    temperature={this.state.temperature}
-                    humidity={this.state.humidity}
-                    city={this.state.city}
-                    country={this.state.country}
-                    description={this.state.description}
-                    error={this.state.error}
-                  />
+      <div className="head agile">
+          <div className="logo">
+              <div className="logo-top wel">
+                <Title />
+              </div>
+              <div className="logo-bottom w3layouts">
+                <div className="sky-form">									
+                  <SubTitle />
+                  <label className="radio hide-radio">
+                      Find out temperature, humidity and more...
+                  </label>
+                  <label className="radio hide-radio">
+                       Find out temperature, humidity and more...
+                  </label>
                 </div>
               </div>
-            </div>
           </div>
+          <div className="login w3">
+              <div className="sap_tabs">
+                <div id="horizontalTab">
+                    <ul className="resp-tabs-list">
+                      <li className="resp-tab-item" ><span>Fill Details</span></li>
+                    </ul>
+                    <div className="resp-tabs-container">
+                      <div className="tab-1 resp-tab-content" >
+                          <div className="login-top agileits">
+                            <Form getWeather={this.getWeather} />
+                          </div>
+                          <div className="weather-div">
+                          <Weather
+                              temperature={this.state.temperature}
+                              humidity={this.state.humidity}
+                              city={this.state.city}
+                              country={this.state.country}
+                              description={this.state.description}
+                              error={this.state.error}
+                            />
+                          </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div className="clear"></div>
         </div>
-      </div>
     );
   }
 }
 
 
 export default App
-
