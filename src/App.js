@@ -18,12 +18,13 @@ class App extends Component {
     }
   }
   getWeather = async (e) => {
-    console.log("E", e.target.elements.city.value)
+    console.log("E", e.target.elements.country.value)
     e.preventDefault();
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
     // e.target.elements.city.value = ''
     // e.target.elements.country.value = ''
+    console.log(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`)
     try {
       const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
       const data = await api_call.json();
