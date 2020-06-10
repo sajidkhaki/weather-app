@@ -118,6 +118,9 @@ button:active {
   letter-spacing: 2px;
   margin-left: 5%;
 }
+.form-control {
+    background-color: #8ab0c7;
+}
 
 .weather__key {
   color: #f16051;
