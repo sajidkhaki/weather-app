@@ -87,7 +87,7 @@ class FormInputs extends Component {
                     <Label for="select" sm={2} style={{ color: "yellow" }}>Country</Label>
                     <Col sm={10}>
                         <Input type="select" name='country' onChange={this.onDropdownCountry} >
-                            <option disabled selected>Select Country</option>
+                            <option value={''} disabled selected>Select Country</option>
                             {country.map((data) => {
                                 return (
                                     <option key={data.country_short_name}
@@ -103,7 +103,7 @@ class FormInputs extends Component {
                     <Label for="select" sm={2} style={{ color: "yellow" }}>State</Label>
                     <Col sm={10}>
                         <Input type="select" name='state' onChange={this.onDropdownCity}>
-                            <option disabled selected>Select State</option>
+                            <option value={''} disabled selected>Select State</option>
                             {state.map((data) => {
                                 return (
                                     <option key={data.state_name}
@@ -119,7 +119,7 @@ class FormInputs extends Component {
                     <Label for="select" sm={2} style={{ color: "yellow" }}>City</Label>
                     <Col sm={10}>
                         <Input type="select" name='city' >
-                            <option disabled selected>Select City</option>
+                            <option value ={''} disabled selected>Select City</option>
                             {city.map((data) => {
                                 return (
                                     <option key={data.city_name}
