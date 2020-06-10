@@ -413,7 +413,7 @@ button:active {
     font-size: 10px;
   }
   .title-container {
-    height: 90vh;
+    height: 98vh;
   }
   .title-container__title {
     font-size: 45px;
@@ -422,7 +422,7 @@ button:active {
     font-size: 25px;
   }
   .form-container {
-    height: 90vh;
+    height: 98vh;
     padding: 50px;
   }
   input[type="text"] {    
