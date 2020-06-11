@@ -85,7 +85,7 @@ class FormInputs extends Component {
                     <Label for="select" sm={2} style={{ color: "yellow" }}>Country</Label>
                     <Col sm={10}>
                         <Input type="select" defaultValue={'DEFAULT'} name='country' onChange={this.onDropdownCountry} >
-                            <option value="DEFAULT" disabled disabled>Select Country</option>
+                            <option value="DEFAULT" disabled>Select Country</option>
                             {country.map((data) => {
                                 return (
                                     <option key={data.country_short_name}
