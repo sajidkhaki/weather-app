@@ -14,7 +14,7 @@ class FormInputs extends Component {
         }
     }
     componentDidMount() {
-        console.log("Component did Mount lifecycle called")
+        console.log("Developed By Sajidkhaki")
         this.refreshList()
     }
     refreshList() {
@@ -26,18 +26,18 @@ class FormInputs extends Component {
             "user-email": "sajid@eresolute.com"
         })
             .end((result) => {
-                console.log('Token', result.body.auth_token);
+                //console.log('Token', result.body.auth_token);
                 this.setState({
                     token: result.body.auth_token
                 })
                 var request2 = unirest("GET", "https://www.universal-tutorial.com/api/countries/");
                 request2.headers({
-                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfZW1haWwiOiJzYWppZEBlcmVzb2x1dGUuY29tIiwiYXBpX3Rva2VuIjoiaHowYk9LNnNCZmNfZHhyRzNhajBWS09JOTZvUzRKVmV3b3FEMkluTGh0UVBJQUVjQXJfeVRsM2Y1RmtRV0lDem9LRSJ9LCJleHAiOjE1OTE4NTk1MDR9.oTraDjs8ff39IN-zx8miY0Phwxle56B5Vvn-7Plez1k",
+                    "Authorization": `Bearer ${this.state.token}`,
                     "Accept": "application/json"
                 })
                     .end((data) => {
                         checkCountry = data.body
-                        console.log('check', checkCountry)
+                        //console.log('check', checkCountry)
                         this.setState({
                             country: checkCountry
                         })
@@ -45,34 +45,32 @@ class FormInputs extends Component {
             });
     }
     onDropdownCountry = (e) => {
-        console.log("THE VAL", e.target.value);
+        //console.log("THE VAL", e.target.value);
         let state = e.target.value
         let stateCheck = []
         let request3 = unirest("GET", `https://www.universal-tutorial.com/api/states/${state}`)
         request3.headers({
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfZW1haWwiOiJzYWppZEBlcmVzb2x1dGUuY29tIiwiYXBpX3Rva2VuIjoiaHowYk9LNnNCZmNfZHhyRzNhajBWS09JOTZvUzRKVmV3b3FEMkluTGh0UVBJQUVjQXJfeVRsM2Y1RmtRV0lDem9LRSJ9LCJleHAiOjE1OTE4NTk1MDR9.oTraDjs8ff39IN-zx8miY0Phwxle56B5Vvn-7Plez1k",
+            "Authorization": `Bearer ${this.state.token}`,
             "Accept": "application/json"
         })
             .end((dataValues) => {
-                console.log('reStoo', dataValues.body)
+               // console.log('reStoo', dataValues.body)
                 stateCheck = dataValues.body
                 this.setState({
                     state: stateCheck
                 })
             })
     }
-
     onDropdownCity = (e) => {
-        console.log("THE VAL", e.target.value);
+        //console.log("THE VAL", e.target.value);
         let city = e.target.value
         let cityCheck = []
         let request4 = unirest("GET", `https://www.universal-tutorial.com/api/cities/${city}`)
         request4.headers({
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfZW1haWwiOiJzYWppZEBlcmVzb2x1dGUuY29tIiwiYXBpX3Rva2VuIjoiaHowYk9LNnNCZmNfZHhyRzNhajBWS09JOTZvUzRKVmV3b3FEMkluTGh0UVBJQUVjQXJfeVRsM2Y1RmtRV0lDem9LRSJ9LCJleHAiOjE1OTE4NTk1MDR9.oTraDjs8ff39IN-zx8miY0Phwxle56B5Vvn-7Plez1k",
-            "Accept": "application/json"
+            "Authorization": `Bearer ${this.state.token}`,
         })
             .end((dataValues) => {
-                console.log('reStoo', dataValues.body)
+                //console.log('reStoo', dataValues.body)
                 cityCheck = dataValues.body
                 this.setState({
                     city: cityCheck
@@ -86,8 +84,8 @@ class FormInputs extends Component {
                 <FormGroup>
                     <Label for="select" sm={2} style={{ color: "yellow" }}>Country</Label>
                     <Col sm={10}>
-                        <Input type="select" name='country' onChange={this.onDropdownCountry} >
-                            <option value={''} disabled selected>Select Country</option>
+                        <Input type="select" defaultValue={'DEFAULT'} name='country' onChange={this.onDropdownCountry} >
+                            <option value="DEFAULT" disabled disabled>Select Country</option>
                             {country.map((data) => {
                                 return (
                                     <option key={data.country_short_name}
@@ -102,8 +100,8 @@ class FormInputs extends Component {
                 <FormGroup>
                     <Label for="select" sm={2} style={{ color: "yellow" }}>State</Label>
                     <Col sm={10}>
-                        <Input type="select" name='state' onChange={this.onDropdownCity}>
-                            <option value={''} disabled selected>Select State</option>
+                        <Input type="select" defaultValue={'DEFAULT'} name='state' onChange={this.onDropdownCity}>
+                            <option value="DEFAULT" disabled>Select State</option>
                             {state.map((data) => {
                                 return (
                                     <option key={data.state_name}
@@ -118,8 +116,8 @@ class FormInputs extends Component {
                 <FormGroup>
                     <Label for="select" sm={2} style={{ color: "yellow" }}>City</Label>
                     <Col sm={10}>
-                        <Input type="select" name='city' >
-                            <option value ={''} disabled selected>Select City</option>
+                        <Input type="select" defaultValue={'DEFAULT'} name='city' >
+                            <option value="DEFAULT" disabled>Select City</option>
                             {city.map((data) => {
                                 return (
                                     <option key={data.city_name}
