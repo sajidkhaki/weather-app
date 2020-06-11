@@ -22,11 +22,11 @@ class App extends Component {
     e.preventDefault();
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
-    console.log('city', city)
-    console.log('city', country)
+   // console.log('city', city)
+   // console.log('city', country)
     // e.target.elements.city.value = ''
     // e.target.elements.country.value = ''
-    console.log(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`)
+    //console.log(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`)
     try {
       const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
       const data = await api_call.json();
